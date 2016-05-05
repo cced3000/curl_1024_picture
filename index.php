@@ -93,9 +93,9 @@ file_put_contents($filename, $img1);
 }	
 			 
 	function createfile($fileName){		
-			$fileName=$fileName. '/'; // 获取需要创建的文件名称
-if (!is_dir($fileName)) mkdir($fileName, 0777); // 使用最大权限0777创建文件
-if (!file_exists($fileName)) { // 如果不存在则创建
+	$fileName=$fileName. '/'; // 获取需要创建的文件名称
+        if (!is_dir($fileName)) mkdir($fileName, 0777); // 使用最大权限0777创建文件
+        if (!file_exists($fileName)) { // 如果不存在则创建
     // 检测是否有权限操作
 	 if (!is_writetable($fileName)) chmod($fileName, 0777); // 如果无权限，则修改为0777最大权限
     // 最终将d写入文件即可
@@ -103,13 +103,12 @@ if (!file_exists($fileName)) { // 如果不存在则创建
 } 
    
 	}	
-	
 	$txt_db = '123.txt';
-     $nums = file_get_contents($txt_db);
-$nums++;
-     file_put_contents($txt_db,$nums);
-		 getcheckimage($nums);
-		 echo "第".$nums."帖子爬取成功<br>";
+         $nums = file_get_contents($txt_db);
+         $nums++;
+         file_put_contents($txt_db,$nums);
+	 getcheckimage($nums);
+	 echo "第".$nums."帖子爬取成功<br>";
 		 
 	//getcheckimage("1813089");
 
